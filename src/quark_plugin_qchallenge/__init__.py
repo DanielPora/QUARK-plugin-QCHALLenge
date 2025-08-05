@@ -1,6 +1,6 @@
 from quark.plugin_manager import factory
 
-from PLUGIN_NAME_FORMATTED.example_module import ExampleModule
+from quark_plugin_qchallenge.example_module import ExampleModule
 
 def register() -> None:
     """
