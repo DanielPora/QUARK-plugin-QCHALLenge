@@ -9,3 +9,14 @@ The first steps after creating a new plugin from this template are fixing all TO
 
 This template includes a GitHub action that prepares the newly created plugin for use with quark by exchanging some placeholders like `QUARK-plugin-QCHALLenge`, based on the name you have given your plugin.
 This process runs automatically and only takes a few seconds, but you should wait for the action to complete before using the plugin, and pull the changes afterwards.
+
+
+
+## Module Overview
+
+| Module                 | Upstream Interface               | Downstream Interface             |
+|------------------------|----------------------------------|----------------------------------|
+| `sp_problem`           | None                             | `quark.interface_types.graph`    |
+| `sp_qubo_mapping`      | `quark.interface_types.graph`    | `quark.interface_types.qubo`     |
+
+

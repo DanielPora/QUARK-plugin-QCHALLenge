@@ -1,12 +1,12 @@
 from dataclasses import dataclass
 from typing import override
 
-from quark.core import Core, Result
-from quark.interface_types import InterfaceType
+from quark.core import Core, Result, Data
+from quark.interface_types import InterfaceType, Qubo
 
 
 @dataclass
-class ExampleModule(Core):
+class SpQuboMapping(Core):
     """
     This is an example module following the recommended structure for a quark module.
 
