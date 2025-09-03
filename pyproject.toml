@@ -5,17 +5,39 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools_scm]
 # can be empty if no extra settings are needed, presence enables setuptools-scm
 
+[tool.poetry]
+name = "QUARK-plugin-QCHALLenge"
+version = "0.1.0"
+description = "QUARK plugin for QCHALLenge"
+authors = [
+    "Daniel Porawski <daniel.porawski@aqarios.com>",
+    "Nico Kraus <nico.kraus@aqarios.com>"
+]
+readme = "README.md"
+homepage = "https://github.com/DanielPora/QUARK-plugin-QCHALLenge"
+license = "Apache-2.0"
+
+[tool.poetry.dependencies]
+python = ">=3.12,<3.14"
+quark-framework = ">=0.3.7"
+pyscipopt = ">=5.0.1"
+
 [project.urls]
 Homepage = "https://github.com/DanielPora/QUARK-plugin-QCHALLenge"
 
 [project]
 name = "QUARK-plugin-QCHALLenge"
 dynamic = ["version"]
+authors = [
+    { name = "Daniel Porawski", email = "daniel.porawski@aqarios.com"},
+    { name = "Nico Kraus", email = "nico.kraus@aqarios.com"}
+]
+description = "QUARK plugin for QCHALLenge"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.12,<3.14"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
 ]
-license = "Apache-2.0"
-dependencies = ["quark-framework>=0.3.7"]
+license = { text = "Apache-2.0" }
+dependencies = ["quark-framework>=0.3.7", "pyscipopt>=5.0.1"]
