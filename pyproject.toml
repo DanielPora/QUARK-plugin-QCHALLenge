@@ -19,6 +19,7 @@ license = "Apache-2.0"
 
 [tool.poetry.dependencies]
 python = ">=3.12,<3.14"
+qchallenge-framework = { git = "https://github.com/Project-QCHALLenge/QCHALLenge-FW.git", branch = "package" }
 quark-framework = ">=0.3.7"
 pyscipopt = ">=5.0.1"
 
@@ -40,4 +41,4 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 license = { text = "Apache-2.0" }
-dependencies = ["quark-framework>=0.3.7", "pyscipopt>=5.0.1"]
+dependencies = ["quark-framework>=0.3.7", "pyscipopt>=5.0.1", "qchallenge-framework>=0.1.0"]

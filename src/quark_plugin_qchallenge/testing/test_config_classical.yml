@@ -1,0 +1,40 @@
+plugins: ["quark_plugin_qchallenge", "quark_plugin_luna"]
+
+qchallenge_problems: &qchallenge_problems [
+  "qch_sensor_positioning_toy": {num_cols: 5, version: 3, max_radius: 2.5, hor_basic_distance: 1, vert_basic_dist: 2},
+  # "qch_sensor_positioning_real": {lidar_density: 0.1, street_point_density: 0.1}
+]
+
+qchallenge_QUBO_problems: &qchallenge_QUBO_problems [
+  "qch_sensor_positioning_toy_qubo": {num_cols: 5, version: 3, max_radius: 2.5, hor_basic_distance: 1, vert_basic_dist: 2},
+  # "qch_sensor_positioning_real": {lidar_density: 0.1, street_point_density: 0.1}
+]
+
+luna_lp_to_qubo: &luna_lp_to_qubo "luna_lp_qubo_mapping"
+
+luna_classical_qubo: &luna_classical_qubo [
+  "luna_sa": {num_reads: 5},
+  # "luna_saga": {},
+  # "luna_qbsa": {},
+  # "luna_rrsa": {},
+  # "luna_pa": {},
+  # "luna_pt": {},
+]
+
+luna_classical_lp: &luna_classical_lp [
+  "luna_scip"
+]
+
+# Pipeline definitions
+
+# Qchallenge LP problems -> Luna LP solver (direct)
+pipeline_qchallenge_direct: &pipeline_qchallenge_direct [*qchallenge_problems, *luna_classical_lp]
+
+# Qchallenge QUBO problems -> Luna classical QUBO solvers  
+pipeline_qchallenge_qubo: &pipeline_qchallenge_qubo [*qchallenge_QUBO_problems,  *luna_classical_qubo]
+
+
+pipelines: [
+  *pipeline_qchallenge_direct, 
+  *pipeline_qchallenge_qubo,
+]
