@@ -1,13 +1,14 @@
 plugins: ["quark_plugin_qchallenge", "quark_plugin_luna"]
 
 qchallenge_problems: &qchallenge_problems [
-  "qch_sensor_positioning_toy": {num_cols: 5, version: 3, max_radius: 2.5, hor_basic_distance: 1, vert_basic_dist: 2},
-  # "qch_sensor_positioning_real": {lidar_density: 0.1, street_point_density: 0.1}
+  # "qch_sensor_positioning": {num_cols: 5, version: 3, max_radius: 2.5, hor_basic_distance: 1, vert_basic_dist: 2},
+  # "qch_sensor_positioning": {real_world_problem: true, lidar_density: 0.1, street_point_density: 0.1},
+  "qch_auto_carrier_loading": {num_cars: 10, num_trucks: 1, seed: 1}
 ]
 
 qchallenge_QUBO_problems: &qchallenge_QUBO_problems [
-  "qch_sensor_positioning_toy_qubo": {num_cols: 5, version: 3, max_radius: 2.5, hor_basic_distance: 1, vert_basic_dist: 2},
-  # "qch_sensor_positioning_real": {lidar_density: 0.1, street_point_density: 0.1}
+  # "qch_sensor_positioning_qubo": {num_cols: 5, version: 3, max_radius: 2.5, hor_basic_distance: 1, vert_basic_dist: 2},
+  # "qch_sensor_positioning_qubo": {real_world_problem: true,lidar_density: 0.1, street_point_density: 0.1}
 ]
 
 luna_lp_to_qubo: &luna_lp_to_qubo "luna_lp_qubo_mapping"
@@ -36,5 +37,5 @@ pipeline_qchallenge_qubo: &pipeline_qchallenge_qubo [*qchallenge_QUBO_problems, 
 
 pipelines: [
   *pipeline_qchallenge_direct, 
-  *pipeline_qchallenge_qubo,
+  # *pipeline_qchallenge_qubo,
 ]
