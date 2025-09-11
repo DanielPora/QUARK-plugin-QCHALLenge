@@ -1,5 +1,5 @@
-from dataclasses import dataclass, field
-from typing import override, Dict
+from dataclasses import dataclass
+from typing import override
 
 from quark.core import Core, Result, Data, Failed
 from quark.interface_types import InterfaceType, Other

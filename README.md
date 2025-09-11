@@ -1,22 +1,13 @@
 # QUARK-plugin-QCHALLenge
 
-A valid quark plugin must provide at least one module.
-Each module must be a subclass of quark's abstract `Core` class, and must implement the necessary `preprocess` and `postprocess` methods.
-
-This template provides a starting point for creating a QUARK plugin in the recommended structure.
-It exposes a single module `ExampleModule` compatible with `QUARK-framework`, missing the necessary implementation of the `preprocess` and `postprocess` functions.
-The first steps after creating a new plugin from this template are fixing all TODOs, renaming `ExampleModule` to something more descriptive, and adapting the `pyproject.toml` file to your needs.
-
-This template includes a GitHub action that prepares the newly created plugin for use with quark by exchanging some placeholders like `QUARK-plugin-QCHALLenge`, based on the name you have given your plugin.
-This process runs automatically and only takes a few seconds, but you should wait for the action to complete before using the plugin, and pull the changes afterwards.
-
-
+This module provides usecases from the QCHALLenge project[^1].
 
 ## Module Overview
 
-| Module                 | Upstream Interface               | Downstream Interface             |
-|------------------------|----------------------------------|----------------------------------|
-| `sp_problem`           | None                             | `quark.interface_types.graph`    |
-| `sp_qubo_mapping`      | `quark.interface_types.graph`    | `quark.interface_types.qubo`     |
+| Module                           | Upstream Interface | Downstream Interface           |
+|----------------------------------|--------------------|--------------------------------|
+| `qch_sensor_positioning_qubo_toy`| None               | `quark.interface_types.qubo`   |
+| `qch_sensor_positioning_toy`     | None               | `quark.interface_types.other (LP)` |
 
-
+[^1]: QCHALLenge project information: https://qarlab.de/qchallenge/ and <br>
+https://www.digitale-technologien.de/DT/Navigation/DE/ProgrammeProjekte/AktuelleTechnologieprogramme/Quanten_Computing/Projekte/QCHALLenge/qchallenge.html
