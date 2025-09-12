@@ -9,11 +9,45 @@ from qchallenge_framework import model_classes
 @dataclass
 class SPProblemQubo(Core):
     """
-    This is an example module following the recommended structure for a quark module.
+    Custom QUBO formulation for the Sensor Positioning problem from the QCHALLenge project.
 
-    A module must have a preprocess and postprocess method, as required by the Core abstract base class.
-    A module's interface is defined by the type of data parameter those methods receive and return, dictating which other modules it can be connected to.
-    Types defining interfaces should be chosen form QUARKs predefined set of types to ensure compatibility with other modules. TODO: insert link
+    This module addresses a sensor positioning use case where street points need to be 
+    covered by lidars that can be placed at potential lidar positions. There are two 
+    different problem structures: toy and real-world.
+    
+    Toy Structure:
+        A grid-based layout with columns and rows where lidars are positioned to cover
+        street points in a structured pattern.
+    
+    Real-world Structure:
+        A factory hall environment with roadways and obstacles where street point and
+        lidar densities determine the accuracy for the coverage.
+    
+    Parameters:
+        Toy problem
+                num_cols (int): Number of columns for the toy problem grid structure. Default: 5
+                
+                version (int): Problem layout version for toy structure. Default: 3
+                    - Version 1: One row of lidars above one row of street points
+                    - Version 2: One row of lidars above two rows of street points  
+                    - Version 3: Three rows of street points with one row of lidars above and below
+                    
+                max_radius (float): Coverage range/radius of the lidars in distance units. Default: 2.5
+                
+                hor_basic_distance (float): Horizontal spacing/width between columns in the grid. Default: 1.0
+                
+                vert_basic_dist (float): Vertical spacing/width between rows in the grid. Default: 2.0
+                
+                real_world_problem (bool): Toggle between toy grid structure (False) and 
+                    real-world factory environment (True). Default: False
+
+        Real-world problem
+
+            lidar_density (float): Density of potential lidar placement positions in the 
+                real-world problem structure. Only relevant when real_world_problem=True. Default: 0.1
+                
+            street_point_density (float): Density of street points to be covered in the 
+                real-world problem structure. Only relevant when real_world_problem=True. Default: 0.1
     """
 
     num_cols : int = 5

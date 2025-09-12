@@ -3,7 +3,8 @@ plugins: ["quark_plugin_qchallenge", "quark_plugin_luna"]
 qchallenge_problems: &qchallenge_problems [
   # "qch_sensor_positioning": {num_cols: 5, version: 3, max_radius: 2.5, hor_basic_distance: 1, vert_basic_dist: 2},
   # "qch_sensor_positioning": {real_world_problem: true, lidar_density: 0.1, street_point_density: 0.1},
-  "qch_auto_carrier_loading": {num_cars: 10, num_trucks: 1, seed: 1}
+  # "qch_auto_carrier_loading": {num_cars: 10, num_trucks: 1, seed: 1},
+  "qch_production_assignment": {machines: 2, jobs: 2, seed: 1}
 ]
 
 qchallenge_QUBO_problems: &qchallenge_QUBO_problems [
