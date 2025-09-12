@@ -1,11 +1,11 @@
 from quark.plugin_manager import factory
 
-from quark_plugin_qchallenge.qch_sensor_positioning_toy import SpToyProblem
-from quark_plugin_qchallenge.qch_sensor_positioning_real import SpRealProblem
-from quark_plugin_qchallenge.qch_sensor_positioning_qubo_toy import SpToyProblemQubo
+from quark_plugin_qchallenge.qch_sensor_positioning import SPProblem
+from quark_plugin_qchallenge.qch_auto_carrier_loading import ACLProblem
+from quark_plugin_qchallenge.qch_sensor_positioning_qubo import SPProblemQubo
 
 
 def register() -> None:
-    factory.register("qch_sensor_positioning_toy", SpToyProblem)
-    factory.register("qch_sensor_positioning_real", SpRealProblem)
-    factory.register("qch_sensor_positioning_toy_qubo", SpToyProblemQubo)
+    factory.register("qch_sensor_positioning", SPProblem)
+    factory.register("qch_sensor_positioning_qubo", SPProblemQubo)
+    factory.register("qch_auto_carrier_loading", ACLProblem)

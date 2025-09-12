@@ -7,7 +7,7 @@ from quark.interface_types import InterfaceType, Other, Qubo
 from qchallenge_framework import model_classes
 
 @dataclass
-class SpToyProblemQubo(Core):
+class SPProblemQubo(Core):
     """
     This is an example module following the recommended structure for a quark module.
 
