@@ -37,8 +37,9 @@ class SPProblem(Core):
                 
                 vert_basic_dist (float): Vertical spacing/width between rows in the grid. Default: 2.0
                 
-                real_world_problem (bool): Toggle between toy grid structure (False) and 
-                    real-world factory environment (True). Default: False
+                
+        real_world_problem (bool): Toggle between toy grid structure (False) and 
+            real-world factory environment (True). Default: False
 
         Real-world problem
 

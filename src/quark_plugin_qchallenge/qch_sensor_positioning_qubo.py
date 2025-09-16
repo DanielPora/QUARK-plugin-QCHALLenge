@@ -73,7 +73,6 @@ class SPProblemQubo(Core):
     def postprocess(self, data: InterfaceType) -> Result:
         sample = self._solution_to_sample(data.data)
         solution_dict = self.__inverter_solution(sample)
-        print("toy lp spl: ", data.data)
         evaluator = model_classes["SP"]["evaluation"](self.problem, solution_dict)
         missed_streetpoints = len(evaluator.check_solution()["missing_achievable_coverage"])
         if missed_streetpoints:
