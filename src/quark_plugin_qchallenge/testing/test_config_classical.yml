@@ -2,22 +2,22 @@ plugins: ["quark_plugin_qchallenge", "quark_plugin_luna"]
 
 qchallenge_problems: &qchallenge_problems [
   # "qch_sensor_positioning": {num_cols: 5, version: 3, max_radius: 2.5, hor_basic_distance: 1, vert_basic_dist: 2},
-  # "qch_sensor_positioning": {real_world_problem: true, lidar_density: 0.1, street_point_density: 0.1},
+  # "qch_sensor_positioning": {real_world_problem: true, lidar_density: 0.1, street_point_density: 0.1}, 
   # "qch_auto_carrier_loading": {num_cars: 10, num_trucks: 1, seed: 1},
-  "qch_production_assignment": {machines: 2, jobs: 4, seed: 1},
-   "qch_production_assignment": {machines: 2, jobs: 4, seed: 2},
-  # "qch_train_routing": {stations: 4, trains: 6, seed: 2},
-  # "qch_truck_loading": {num_boxes: 2, seed: 2}
+  # "qch_production_assignment": {machines: 2, jobs: 4, seed: 1},
+  # "qch_train_routing": {stations: 2, trains: 2, seed: 2},
+  # "qch_truck_loading": {num_boxes: 2, seed: 2},
+  "qch_modular_production_logistics": {},
 ]
 
 qchallenge_QUBO_problems: &qchallenge_QUBO_problems [
-  # "qch_sensor_positioning_qubo": {num_cols: 5, version: 3, max_radius: 2.5, hor_basic_distance: 1, vert_basic_dist: 2},
+  "qch_sensor_positioning_qubo": {num_cols: 5, version: 3, max_radius: 2.5, hor_basic_distance: 1, vert_basic_dist: 2},
   # "qch_sensor_positioning_qubo": {real_world_problem: true,lidar_density: 0.1, street_point_density: 0.1},
   "qch_production_assignment_qubo": {machines: 2, jobs: 4, seed: 1},
-   "qch_production_assignment_qubo": {machines: 2, jobs: 4, seed: 2},
+  #  "qch_production_assignment_qubo": {machines: 2, jobs: 4, seed: 2},
 ]
 
-luna_lp_to_qubo: &luna_lp_to_qubo "luna_lp_qubo_mapping"
+qch_qubo_map: &qch_qubo_map "qch_qubo_map"
 
 luna_classical_qubo: &luna_classical_qubo [
   "luna_sa": {num_reads: 1000},
@@ -40,8 +40,11 @@ pipeline_qchallenge_direct: &pipeline_qchallenge_direct [*qchallenge_problems, *
 # Qchallenge QUBO problems -> Luna classical QUBO solvers  
 pipeline_qchallenge_qubo: &pipeline_qchallenge_qubo [*qchallenge_QUBO_problems,  *luna_classical_qubo]
 
+pipeline_qchallenge_mapping_qubo: &pipeline_qchallenge_mapping_qubo [*qchallenge_problems, *qch_qubo_map, *luna_classical_qubo]
+
 
 pipelines: [
   *pipeline_qchallenge_direct, 
-  *pipeline_qchallenge_qubo,
+  # *pipeline_qchallenge_qubo,
+  # *pipeline_qchallenge_mapping_qubo,
 ]

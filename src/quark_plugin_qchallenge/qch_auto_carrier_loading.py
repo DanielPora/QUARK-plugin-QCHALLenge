@@ -8,7 +8,12 @@ from qchallenge_framework import model_classes
 
 @dataclass
 class ACLProblem(Core):
-    """Auto Carrier Loading (ACL) problem module from the QCHALLenge Project."""
+    """
+    The AutoCarrier Loading use case is about loading cars onto trucks 
+    while respecting the height, length, and weight constraints. 
+    The cars and trucks are generated using predefined or random configurations. 
+    The solution involves optimizing the number of cars loaded and ensuring that constraints are satisfied.
+    """
 
     num_cars: int = 10
     num_trucks: int = 1

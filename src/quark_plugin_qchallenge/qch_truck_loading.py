@@ -9,7 +9,10 @@ from qchallenge_framework import model_classes
 @dataclass
 class TLProblem(Core):
     """
-    Create a 2-D truck loading problem. 
+    Create a 2-D truck loading problem for fragile not stackable boxes with a rectangular base area. 
+    A defined number of boxes are created with random lenght, width and weigth.
+    Goal of the optimization problem is to utilize the available cargo space optimally 
+    while respecting the weigth limit and dimensions of the truck.
  
     
     Parameters:
