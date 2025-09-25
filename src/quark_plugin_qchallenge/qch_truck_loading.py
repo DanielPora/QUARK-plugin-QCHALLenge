@@ -3,7 +3,7 @@ from typing import override
 
 from quark.core import Core, Result, Data, Failed
 from quark.interface_types import InterfaceType, Other
-from qchallenge_framework import model_classes
+from framework.init import model_classes
 
 
 @dataclass
