@@ -3,7 +3,7 @@
 This module provides usecases from the QCHALLenge project[^1] implemented by Aqarios[^2].
 These usecases consists of industry relevant problems which are formulated as mixed integer linear programs (MILP).
 All of them introduce constraints in different magnitudes and will be therefore challenging for QUBO solvers. 
-In addition to custom efficient qubo formulations for some usecases a general qubo mapping is provided.
+In addition to efficient custom qubo formulations for some usecases, a general qubo mapping is provided.
 
 ## Usecases
 
@@ -25,5 +25,5 @@ In addition to custom efficient qubo formulations for some usecases a general qu
 | `qch_qubo_map`                   | `quark.interface_types.other (LP)` | `quark.interface_types.qubo`   |
 
 [^1]: QCHALLenge project information: https://qarlab.de/qchallenge/ and <br>
-https://www.digitale-technologien.de/DT/Navigation/DE/ProgrammeProjekte/AktuelleTechnologieprogramme/Quanten_Computing/Projekte/QCHALLenge/qchallenge.html
+https://www.digitale-technologien.de/DT/Navigation/DE/ProgrammeProjekte/AktuelleTechnologieprogramme/Quanten_Computing/Projekte/QCHALLenge/qchallenge.html <br>
 [^2]: https://www.aqarios.com

@@ -5,7 +5,6 @@ from quark_plugin_qchallenge.qch_sensor_positioning_qubo import SPProblemQubo
 from quark_plugin_qchallenge.qch_auto_carrier_loading import ACLProblem
 from quark_plugin_qchallenge.qch_production_assignment import PASProblem
 from quark_plugin_qchallenge.qch_production_assignment_qubo import PASProblemQubo
-from quark_plugin_qchallenge.qch_modular_production_logistics import MPLProblem
 from quark_plugin_qchallenge.qch_train_routing import TRProblem
 from quark_plugin_qchallenge.qch_truck_loading import TLProblem
 from quark_plugin_qchallenge.qch_qubo_map import QuboMap
@@ -20,4 +19,3 @@ def register() -> None:
     factory.register("qch_train_routing", TRProblem)
     factory.register("qch_truck_loading", TLProblem)
     factory.register("qch_qubo_map", QuboMap)
-    factory.register("qch_modular_production_logistics", MPLProblem)
