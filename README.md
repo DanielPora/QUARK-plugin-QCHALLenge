@@ -1,22 +1,29 @@
 # QUARK-plugin-QCHALLenge
 
-A valid quark plugin must provide at least one module.
-Each module must be a subclass of quark's abstract `Core` class, and must implement the necessary `preprocess` and `postprocess` methods.
+This module provides usecases from the QCHALLenge project[^1] implemented by Aqarios[^2].
+These usecases consists of industry relevant problems which are formulated as mixed integer linear programs (MILP).
+All of them introduce constraints in different magnitudes and will be therefore challenging for QUBO solvers. 
+In addition to efficient custom qubo formulations for some usecases, a general qubo mapping is provided.
 
-This template provides a starting point for creating a QUARK plugin in the recommended structure.
-It exposes a single module `ExampleModule` compatible with `QUARK-framework`, missing the necessary implementation of the `preprocess` and `postprocess` functions.
-The first steps after creating a new plugin from this template are fixing all TODOs, renaming `ExampleModule` to something more descriptive, and adapting the `pyproject.toml` file to your needs.
+## Usecases
 
-This template includes a GitHub action that prepares the newly created plugin for use with quark by exchanging some placeholders like `QUARK-plugin-QCHALLenge`, based on the name you have given your plugin.
-This process runs automatically and only takes a few seconds, but you should wait for the action to complete before using the plugin, and pull the changes afterwards.
-
-
-
-## Module Overview
-
-| Module                 | Upstream Interface               | Downstream Interface             |
-|------------------------|----------------------------------|----------------------------------|
-| `sp_problem`           | None                             | `quark.interface_types.graph`    |
-| `sp_qubo_mapping`      | `quark.interface_types.graph`    | `quark.interface_types.qubo`     |
+| Module                            | Upstream Interface | Downstream Interface               |
+|-----------------------------------|--------------------|------------------------------------|
+| `qch_sensor_positioning`          | None               | `quark.interface_types.other (LP)` |
+| `qch_sensor_positioning_qubo`     | None               | `quark.interface_types.qubo`       |
+| `qch_production_assignment`       | None               | `quark.interface_types.other (LP)` |
+| `qch_production_assignment_qubo`  | None               | `quark.interface_types.qubo`       |
+| `qch_train_routing`               | None               | `quark.interface_types.other (LP)` |
+| `qch_sensor_auto_carrier_loading` | None               | `quark.interface_types.other (LP)` |
+| `qch_modular_production_logistics`| None               | `quark.interface_types.other (LP)` |
 
 
+## Mapping
+
+| Module                           | Upstream Interface                 | Downstream Interface           |
+|----------------------------------|------------------------------------|--------------------------------|
+| `qch_qubo_map`                   | `quark.interface_types.other (LP)` | `quark.interface_types.qubo`   |
+
+[^1]: QCHALLenge project information: https://qarlab.de/qchallenge/ and <br>
+https://www.digitale-technologien.de/DT/Navigation/DE/ProgrammeProjekte/AktuelleTechnologieprogramme/Quanten_Computing/Projekte/QCHALLenge/qchallenge.html <br>
+[^2]: https://www.aqarios.com
