@@ -9,7 +9,7 @@ if __name__ == "__main__":
     pg.add_sensor_positioning(
         real_world_problem=False,
         num_cols=[5, 10],
-        version=[2, 3],
+        version=[3],
         max_radius=[2.5],
         hor_basic_distance=[1],
         vert_basic_dist=[2],
@@ -23,7 +23,7 @@ if __name__ == "__main__":
     )
 
     pg.add_truck_loading(
-        num_boxes=[2, 5, 10],
+        num_boxes=[5, 10],
         seed=[1, 2]
     )
     
@@ -54,9 +54,9 @@ if __name__ == "__main__":
     )
     
     pg.add_production_assignment_qubo(
-        machines=[2, 3],
+        machines=[2],
         jobs=[4, 6],
-        seed=[1, 11, 345]
+        seed=[1, 345]
     )
 
     # ----------------------------
