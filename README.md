@@ -24,6 +24,16 @@ In addition to efficient custom qubo formulations for some usecases, a general q
 |----------------------------------|------------------------------------|--------------------------------|
 | `qch_qubo_map`                   | `quark.interface_types.other (LP)` | `quark.interface_types.qubo`   |
 
+
+## Problem Generator
+
+Use the `script_generator.py` to create numerous benchmarking instances.
+One can add standard problems, that will be solved directly, QUBO problems (only for usecases with a native QUBO
+formulation), and mapped problems, that will be transformed automatically to a QUBO.
+The generated script can then be edited by adding solvers and pipelines.
+
+
+
 [^1]: QCHALLenge project information: https://qarlab.de/qchallenge/ and <br>
 https://www.digitale-technologien.de/DT/Navigation/DE/ProgrammeProjekte/AktuelleTechnologieprogramme/Quanten_Computing/Projekte/QCHALLenge/qchallenge.html <br>
 [^2]: https://www.aqarios.com
