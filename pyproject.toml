@@ -28,7 +28,7 @@ Homepage = "https://github.com/DanielPora/QUARK-plugin-QCHALLenge"
 
 [project]
 name = "QUARK-plugin-QCHALLenge"
-version = "0.1.1"
+version = "0.2.0"
 authors = [
     { name = "Daniel Porawski", email = "daniel.porawski@aqarios.com"},
     { name = "Nico Kraus", email = "nico.kraus@aqarios.com"}
