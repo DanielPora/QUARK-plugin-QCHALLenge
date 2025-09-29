@@ -56,13 +56,21 @@ class SPProblemQubo(Core):
     hor_basic_distance : float = 1.0
     vert_basic_dist : float = 2.
     seed : int = 1
+
+    real_world_problem: bool = False
+    
+    lidar_density: float = 0.1
+    street_point_density: float = 0.1
   
     @override
     def preprocess(self, data: InterfaceType) -> Result:
         sp_data = model_classes["SP"]["data"]
-  
-        self.problem = sp_data.create_problem(version=self.version, num_cols=self.num_cols, max_radius=self.max_radius, 
-                                             hor_basic_distance=self.hor_basic_distance, seed=self.seed)
+        if self.real_world_problem:
+            self.problem = sp_data.create_problem_from_glb_file(lidar_density=self.lidar_density, street_point_density=self.street_point_density)
+        else:
+            self.problem = sp_data.create_problem(
+                version=self.version, num_cols=self.num_cols, max_radius=self.max_radius,
+                hor_basic_distance=self.hor_basic_distance)
  
         self.model = model_classes["SP"]["qubobinary_model"](self.problem)
         qubo = self.model.model
