@@ -55,6 +55,7 @@ class SPProblem(Core):
     max_radius: float = 2.5
     hor_basic_distance: float = 1.0
     vert_basic_dist: float = 2.0
+    seed: int = 1
 
     real_world_problem: bool = False
     
@@ -69,7 +70,7 @@ class SPProblem(Core):
         else:
             self.problem = sp_data.create_problem(
                 version=self.version, num_cols=self.num_cols, max_radius=self.max_radius,
-                hor_basic_distance=self.hor_basic_distance)
+                hor_basic_distance=self.hor_basic_distance, seed=self.seed)
 
         sp_milp = model_classes["SP"]["cplex_model"]
         lp_model = sp_milp(self.problem).model

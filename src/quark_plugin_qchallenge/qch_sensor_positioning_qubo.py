@@ -70,7 +70,7 @@ class SPProblemQubo(Core):
         else:
             self.problem = sp_data.create_problem(
                 version=self.version, num_cols=self.num_cols, max_radius=self.max_radius,
-                hor_basic_distance=self.hor_basic_distance)
+                hor_basic_distance=self.hor_basic_distance, seed=self.seed)
  
         self.model = model_classes["SP"]["qubobinary_model"](self.problem)
         qubo = self.model.model
